@@ -9,7 +9,10 @@ from rest_framework import permissions
 
 
 class FoodViewSet(viewsets.ModelViewSet):  # the most popular view set ModelViewSet
-    queryset = Food.objects.all()
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Food.objects.all()  # order_by('cat')
     serializer_class = FoodSerializer
     permission_classes = [permissions.IsAuthenticated]
 
